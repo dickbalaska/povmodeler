@@ -701,6 +701,7 @@ void PMTreeView::keyPressEvent( QKeyEvent* e )
          case Qt::Key_Minus:
             current->setExpanded( false );
             accept = true;
+		    break;
          case Qt::Key_Delete:
             deleteItem = true;
             accept = true;
