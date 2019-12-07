@@ -5,6 +5,8 @@
 TEMPLATE = app
 TARGET = qtpovmodeler
 QT       += core gui widgets xml dbus opengl x11extras
+CONFIG += c++11
+
 INCLUDEPATH += .
 INCLUDEPATH += /usr/include/freetype2
 
