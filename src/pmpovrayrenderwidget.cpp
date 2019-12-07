@@ -119,7 +119,7 @@ bool PMPovrayRenderWidget::render( const QByteArray& scene,
                + "\n" +
                + " +K0.0" + " +KFI1" + " +KFF1" + " +KI0.0" + " +KF0.0"
                + "\n" +
-               + " +SF1" + " +EF1"+ " -KC" + " +D" + " +P";
+               + " +SF1" + " +EF1"+ " -KC" + " -D" + " -P";
 
    QFileInfo file_info( documentURL.toString() );
 	       
