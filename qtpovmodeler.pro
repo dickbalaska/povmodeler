@@ -3,7 +3,7 @@
 ######################################################################
 
 TEMPLATE = app
-TARGET = povmodeler
+TARGET = qtpovmodeler
 QT       += core gui widgets xml dbus opengl x11extras
 INCLUDEPATH += .
 INCLUDEPATH += /usr/include/freetype2
