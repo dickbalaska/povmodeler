@@ -216,7 +216,7 @@ void PMPovrayRenderWidget::slotRenderingFinished()
    cleanup();
 }
 
-void PMPovrayRenderWidget::paintEvent( QPaintEvent* ev )
+void PMPovrayRenderWidget::paintEvent( QPaintEvent* /*ev*/ )
 {
    //if( is_preview ) return;
 

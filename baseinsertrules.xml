@@ -191,7 +191,7 @@
   </targetclass>
 
   <targetclass name="Not_in_tree">
-  </targetclass >
+  </targetclass>
 
   <targetclass name="Declare">
     <rule>

@@ -146,10 +146,12 @@ private:
     * Major radius
     */
    double m_majorRadius;
+
    /**
     * use sturm algorithm
     */
    bool m_sturm;
+
    /**
     * default view structure
     */
@@ -159,6 +161,7 @@ private:
    static int s_parameterKey;
 
    static PMMetaObject* s_pMetaObject;
+
 };
 
 #endif

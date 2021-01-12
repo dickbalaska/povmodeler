@@ -66,7 +66,7 @@ QByteArray PMLibraryIconDrag::encodedData( QMimeData *mimeData ) const
          s += m_paths[i] + "\r" + l + "\n";
       }
       a.resize( s.length() );
-      memcpy( a.data(), s.toLatin1(), s.length() );
+      memcpy( a.data(), s.toLatin1(), (size_t)s.length() );
    }
    return a;
 }
@@ -98,8 +98,8 @@ bool PMLibraryIconDrag::decode( const QMimeData *e, QStringList& strList, QList<
    return true;
 }
 
-void PMLibraryIconDrag::append( const QStandardItem &item, const QRect &pr,
-                               const QRect &tr, const QString &path, bool isSubLibrary )
+void PMLibraryIconDrag::append( const QStandardItem& /*item*/, const QRect& /*pr*/,
+                               const QRect& /*tr*/, const QString& path, bool isSubLibrary )
 {
    //Q3IconDrag::append( item, pr, tr );
    m_paths << path;
@@ -170,8 +170,8 @@ QDrag *PMLibraryIconView::dragObject()
         return nullptr;
     }
 
-   QPoint orig = viewport()->mapFromGlobal( QCursor::pos() );
-   PMLibraryIconDrag *drag = new PMLibraryIconDrag( viewport() , "" );//eticre char name null
+   //QPoint orig = viewport()->mapFromGlobal( QCursor::pos() );
+   //PMLibraryIconDrag *drag = new PMLibraryIconDrag( viewport() , "" );//eticre char name null
    //drag->setPixmap( currentItem()->icon().pixmap() );//,
                      //QPoint( currentItem()->pixmapRect().width() / 2,
                        //      currentItem()->pixmapRect().height() / 2 ) );

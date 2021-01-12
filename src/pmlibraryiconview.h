@@ -38,7 +38,7 @@ class PMLibraryIconDrag : public QDrag
    Q_OBJECT
 public:
    /** Constructor */
-   PMLibraryIconDrag( QWidget * dragSource , const char* name ) : QDrag( dragSource ) {}
+   PMLibraryIconDrag( QWidget * dragSource , const char* /*name*/ ) : QDrag( dragSource ) {}
 
    /** @return The ith format, or NULL. */
    const char* format( int i ) const;

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Qt Pov Modeler
+Type=Application
+Comment=POV-Ray Modeler
+X-DocPath=qtpovmodeler/index.html
+Exec=qtpovmodeler
+Icon=qtpovmodeler.png
+MimeType=application/x-kpovmodeler;
+Categories=Qt;Graphics;

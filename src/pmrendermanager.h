@@ -413,7 +413,7 @@ private:
    PMViewStructure m_axesViewStructure[3];
    bool m_axesViewStructureCreated;
    QResizeEvent *m_pResize;
-   QOpenGLContext* m_context;
+   //QOpenGLContext* m_context;
 };
 
 #endif

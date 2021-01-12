@@ -1060,7 +1060,7 @@ private:
 
    QAction* m_pSearchLibraryObjectAction;
 
-   QComboBox* m_pRenderComboAction;
+   QComboBox* m_pRenderComboAction = nullptr;
    QAction* m_pRenderSettingsAction;
    QAction* m_pViewRenderWindowAction;
    QAction* m_pRenderAction;

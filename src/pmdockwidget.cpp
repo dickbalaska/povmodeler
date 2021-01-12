@@ -621,10 +621,11 @@ bool PMDockWidget::event( QEvent* pevent )
 
 PMDockWidget* PMDockWidget::manualDock( PMDockWidget* target, DockPosition dockPos, int spliPos, QPoint pos, bool check, int tabIndex )
 {
-    if( !manager ) return nullptr;
+	if( !manager ) {return nullptr;}
 
-    if ( this == target )
-        return nullptr;  // docking to itself not possible
+	if ( this == target ) {
+		return nullptr;
+	}  // docking to itself not possible
 
 	bool succes = true; // tested flag
 
@@ -799,7 +800,7 @@ PMDockWidget* PMDockWidget::manualDock( PMDockWidget* target, DockPosition dockP
 	else {
 		// if to dock not to the center of the target dockwidget,
 		// dock to newDock
-		PMDockSplitter* panner = 0L;
+		PMDockSplitter* panner = nullptr;
 		if ( dockPos == PMDockWidget::DockTop  || dockPos == PMDockWidget::DockBottom ) panner = new PMDockSplitter( newDock, Qt::Horizontal, spliPos, manager->splitterHighResolution() );
 		if ( dockPos == PMDockWidget::DockLeft || dockPos == PMDockWidget::DockRight  ) panner = new PMDockSplitter( newDock, Qt::Vertical , spliPos, manager->splitterHighResolution() );
 		if( panner ) panner->setObjectName("_dock_split_");
@@ -1432,7 +1433,7 @@ PMDockWidget* PMDockManager::findDockWidgetAt( const QPoint& pos )
 
     if ( !childDockWidgetList ) return nullptr;
     if ( childDockWidgetList->indexOf( w ) != -1 ) return nullptr;
-    if ( currentDragWidget->isGroup && ( ( PMDockWidget* )w )->parentDockTabGroup() ) return 0L;
+    if ( currentDragWidget->isGroup && ( ( PMDockWidget* )w )->parentDockTabGroup() ) return nullptr;
 
 	PMDockWidget* www = (PMDockWidget*)w;
     if ( www->dockSite() == ( int )PMDockWidget::DockNone ) return nullptr;
@@ -1703,7 +1704,7 @@ void PMDockManager::slotMenuPopup()
 	}
 }
 
-void PMDockManager::slotMenuActivated( QAction* act )
+void PMDockManager::slotMenuActivated( QAction* /*act*/ )
 {
     MenuDockData data = menuData.at( 1 );
 	data.dock->changeHideShowState();
@@ -1722,7 +1723,7 @@ PMDockWidget* PMDockManager::findWidgetParentDock( QWidget* w ) const
 	return found;
 }
 
-#ifdef _JOWENN_EXPERIMENTAL_
+#ifdef JOWENN_EXPERIMENTAL_
 
 PMDockArea::PMDockArea( QWidget* parent)
 		:QWidget( parent)

@@ -47,13 +47,13 @@
   Added kparts ability from kparts/dockmainwindow
 */
 
-#define _JOWENN_EXPERIMENTAL_
+#define JOWENN_EXPERIMENTAL_
 
 
 #ifndef KDOCKWIDGET_H
 #define KDOCKWIDGET_H
 
-#define _KDOCKWIDGET_2_2_
+//#define _KDOCKWIDGET_2_2_
 
 #include <QPoint>
 #include <QList>
@@ -391,7 +391,7 @@ public:
 	 */
 	PMDockWidget( PMDockManager* dockManager,
                       const QPixmap &pixmap, QWidget* parent = nullptr, const QString& strCaption = QString(),
-                      const QString& strTabPageLabel = QLatin1String( " " ), Qt::WindowFlags f = 0);
+                      const QString& strTabPageLabel = QLatin1String( " " ), Qt::WindowFlags f = nullptr);
 
 	/**
 	 * Destructs a dockwidget.
@@ -1302,7 +1302,7 @@ private:
 	PMDockMain* m_pMain;
 };
 
-#ifdef _JOWENN_EXPERIMENTAL_
+#ifdef JOWENN_EXPERIMENTAL_
 /* Joseph Wenninger jowenn@kde.org Experimental (Just all KXmlGuiWindow references changed to QWidget, otherwise nearly exactly the
    same as PMDockMainWindow*/
 
@@ -1315,7 +1315,7 @@ class EXPORT_DOCKCLASS PMDockArea : public QWidget
 public:
 
 
-	PMDockArea( QWidget* parent = 0L);
+	PMDockArea( QWidget* parent = nullptr);
 
 	virtual ~PMDockArea();
 
@@ -1325,7 +1325,7 @@ public:
 	void setMainDockWidget( PMDockWidget* );
 	PMDockWidget* getMainDockWidget(){ return mainDockWidget; }
 
-	PMDockWidget* createDockWidget( const QPixmap &pixmap, QWidget* parent = 0L,
+	PMDockWidget* createDockWidget( const QPixmap &pixmap, QWidget* parent = nullptr,
 											  const QString& strCaption = QString(), const QString& strTabPageLabel = QLatin1String( " " ) );
 
 	void writeDockConfig(QDomElement &base);
